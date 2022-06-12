@@ -83,7 +83,7 @@ export const main = async () => {
       let cpus = os.cpus()
       console.log(colours.fg.cyan, cpus.length + ' CPUs overall. ' + cpus[0].model.trim(), colours.reset);
       for ( let i = 0; i < cpus.length; i++) {
-        console.log(colours.fg.cyan, `CPU: ${i + 1}, clock rate ${cpus[i].speed}`, colours.reset)
+        console.log(colours.fg.cyan, `CPU: ${i + 1}, clock rate ${cpus[i].speed/1000} GHz`, colours.reset)
       }
       console.log(colours.fg.green, 'You are currently in ' + process.cwd(), colours.reset)
     } else if (data.toString().trim() == 'os --username') {
